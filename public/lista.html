@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lista.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Meus recados</h1>
+    </header>
+<main>
+    <div class="title">
+        <h2><img class="astro1" src="as.svg" alt=""></h2>
+        
+    </div>
+
+    <div class="card">
+        <div class="lineInput">
+            <label>Detalhamento</label>
+            <input type="text" id="detalhamento" placeholder="Detalhamento">
+        </div>
+       
+        <div class="lineInput">
+            <label>descrição</label>
+            <input type="text" id="descricao" placeholder="descrição">
+        </div>
+         
+        <button id="btn1" onclick="criarRecado()" >Salvar</button>
+       
+    </div>
+
+    <div class="content">
+       <table border="1">
+        <thead>
+           
+            <th>ID</th>
+            <th>detalhamento</th>
+            <th>descrição</th>
+            <th acao class="center">Ações</th>
+        </thead>
+        <tbody id="tbody"> 
+           
+        </tbody>
+       </table>
+    </div>
+    
+</main>
+       
+<button id="sair" class="sair">sair</button>
+    
+</body>
+<script src="./js/dados.js"></script>
+<script src="./js/recados.js"></script>
+</html>
