@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+}
+
+body{
+  background-color: rgb(7, 226, 226); 
+}
+
+header{
+    background-color: rgb(58, 81, 81);
+    padding: 10px;
+    color: white;
+    text-align: center;
+    
+}
+
+main {
+    padding: 30px 50px;
+}
+.card {
+    background-color: white;
+    border: 1px solid white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 40px -12px blue;
+    margin: 40px;
+}
+
+.LineInput {
+    display: grid;
+    margin-bottom: 10px;
+}
+input{
+    padding: 10px;
+    border: 1px solid wheat;
+    border-radius: 3px;
+    outline: 0;
+}
+
+button{
+    border: 0px;
+    padding: 10px;
+    outline: 0;
+    background-color: aquamarine;
+    color: blue;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: rgb(127, 127, 241);
+    cursor: pointer;
+}
+.content{
+    margin-top: 15px;
+}
+
+table{
+    border-collapse: collapse;
+    border: 1px solid white;
+    width: 100%;
+}
+
+table th {
+    background-color: rgb(214, 214, 214);
+   
+}
+table th, td {
+    
+    padding: 1px 5px;
+    text-align: left;
+    
+}
+
+table td img {
+    width: 22px;
+    padding: 10px;
+}
+
+.center {
+    text-align: center;
+    width: 200px;
+}
+
+.sair {
+    margin: 5px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 185vh;
+    background-color: aliceblue;
+    margin-top: 400px;
+    
+
+}
+
+.astro1{
+    width: 120px;
+}
