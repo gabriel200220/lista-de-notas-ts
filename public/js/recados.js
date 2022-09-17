@@ -4,7 +4,7 @@ btnSair.addEventListener("click", () => {
     localStorage.removeItem("UsuarioOn");
     sair();
 });
-let usuarioON = getItemStorage("UsuarioOn");
+let usuarioON = getItemStorage("UsuarioOn", "{}");
 if (!usuarioON) {
     sair();
 }
@@ -45,10 +45,10 @@ function imprimirRecados() {
         td_descricao.innerHTML = usuarioON.recados[i].descricao;
         let td_acao = document.createElement("td");
         let imgEdit = document.createElement("img");
-        imgEdit.src = "caneta.png";
+        imgEdit.src = "./assets/caneta.png";
         imgEdit.onclick = () => editarRecado(usuarioON.recados[i].id);
         let imgDelete = document.createElement("img");
-        imgDelete.src = "prancheta.png";
+        imgDelete.src = "./assets/prancheta.png";
         imgDelete.onclick = () => deletarRecado(usuarioON.recados[i].id);
         td_acao.appendChild(imgEdit);
         td_acao.appendChild(imgDelete);
@@ -69,7 +69,6 @@ function editarRecado(index) {
     let btnEditar = document.getElementById("btn1");
     btnEditar.innerHTML = "Atualizar";
     btnEditar.onclick = () => modificaRecado(btnEditar, capturaRecado);
-    console.log("botaoSalvarAntes", btnEditar);
 }
 function modificaRecado(btn, index) {
     usuarioON.recados[index].detalhamento = detalhamentoInput.value;
@@ -92,14 +91,8 @@ function deletarRecado(index) {
     setItemStorage("UsuarioOn", usuarioON);
     imprimirRecados();
 }
-function getItemStorage(key) {
-    return JSON.parse(localStorage.getItem(key) || "");
-}
-function setItemStorage(key, valor) {
-    localStorage.setItem(key, JSON.stringify(valor));
-}
 function atualizarRecados() {
-    const usuarios = getItemStorage("usuarios");
+    const usuarios = getItemStorage("usuarios", "[]");
     usuarios.forEach((usuario) => {
         if (usuario.email === usuarioON.email) {
             usuario.recados = usuarioON.recados;

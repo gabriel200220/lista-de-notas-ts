@@ -1,5 +1,8 @@
+
+botao.addEventListener("click", validarUsuario);
+
 function validarUsuario() {
-  const userList = getItemStorage("listaUsuarios");
+  const userList = getItemStorage("listaUsuarios", "[]");
   const user: Usuario = {
     email: email.value,
     senha: senha.value,

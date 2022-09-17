@@ -1,9 +1,5 @@
-const btnEntrar = document.getElementById("btn-entrar") as HTMLButtonElement;
 btnEntrar.addEventListener("click", entrar);
 
-const btnCadastro = document.getElementById(
-  "btn-cadastro"
-) as HTMLButtonElement;
 btnCadastro.addEventListener("click", realizarCadastro);
  
 function entrar() {

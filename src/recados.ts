@@ -4,7 +4,7 @@ btnSair.addEventListener("click", () => {
   sair();
 });
 
-let usuarioON = getItemStorage("UsuarioOn");
+let usuarioON = getItemStorage("UsuarioOn", "{}");
 
 if (!usuarioON) {
   sair();
@@ -58,11 +58,11 @@ function imprimirRecados() {
     let td_acao = document.createElement("td");
 
     let imgEdit = document.createElement("img");
-    imgEdit.src = "caneta.png";
+    imgEdit.src = "./assets/caneta.png";
     imgEdit.onclick = () => editarRecado(usuarioON.recados[i].id);
 
     let imgDelete = document.createElement("img");
-    imgDelete.src = "prancheta.png";
+    imgDelete.src = "./assets/prancheta.png";
     imgDelete.onclick = () => deletarRecado(usuarioON.recados[i].id);
 
     td_acao.appendChild(imgEdit);
@@ -91,7 +91,6 @@ function editarRecado(index: string) {
   btnEditar.innerHTML = "Atualizar";
 
   btnEditar.onclick = () => modificaRecado(btnEditar, capturaRecado);
-  console.log("botaoSalvarAntes", btnEditar);
 }
 
 function modificaRecado(btn: HTMLButtonElement, index: string) {
@@ -125,16 +124,8 @@ function deletarRecado(index: string) {
   imprimirRecados();
 }
 
-function getItemStorage(key: string) {
-  return JSON.parse(localStorage.getItem(key) || "");
-}
-
-function setItemStorage(key: string, valor: Recado[] | Usuario[]) {
-  localStorage.setItem(key, JSON.stringify(valor));
-}
-
 function atualizarRecados() {
-  const usuarios = getItemStorage("usuarios");
+  const usuarios = getItemStorage("usuarios", "[]");
   usuarios.forEach((usuario: Usuario) => {
     if (usuario.email === usuarioON.email) {
       usuario.recados = usuarioON.recados;

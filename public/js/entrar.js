@@ -1,7 +1,5 @@
 "use strict";
-const btnEntrar = document.getElementById("btn-entrar");
 btnEntrar.addEventListener("click", entrar);
-const btnCadastro = document.getElementById("btn-cadastro");
 btnCadastro.addEventListener("click", realizarCadastro);
 function entrar() {
     if (!email.value || !senha.value) {
